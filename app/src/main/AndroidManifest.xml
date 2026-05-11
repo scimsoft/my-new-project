@@ -27,10 +27,6 @@
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"
         tools:targetApi="tiramisu" />
 
-    <!-- Foreground service for file transfer -->
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE"
-        tools:targetApi="upside_down_cake" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
@@ -92,8 +88,7 @@
         <!-- File transfer service -->
         <service
             android:name=".transfer.FileTransferService"
-            android:exported="false"
-            android:foregroundServiceType="connectedDevice" />
+            android:exported="false" />
 
     </application>
 </manifest>

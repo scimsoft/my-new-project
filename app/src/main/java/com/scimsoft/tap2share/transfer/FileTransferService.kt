@@ -42,7 +42,6 @@ class FileTransferService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        startForeground(NOTIFICATION_ID, createNotification("TapShare ready"))
     }
 
     override fun onDestroy() {
