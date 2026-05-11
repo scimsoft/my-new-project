@@ -1,4 +1,4 @@
-package com.tapshare.app
+package com.scimsoft.tap2share
 
 import android.app.Application
 import android.app.NotificationChannel

@@ -1,4 +1,4 @@
-package com.tapshare.app.ui.theme
+package com.scimsoft.tap2share.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

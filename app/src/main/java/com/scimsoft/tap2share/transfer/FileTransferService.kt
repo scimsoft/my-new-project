@@ -1,4 +1,4 @@
-package com.tapshare.app.transfer
+package com.scimsoft.tap2share.transfer
 
 import android.app.Notification
 import android.app.Service
@@ -11,10 +11,10 @@ import android.os.Environment
 import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import com.tapshare.app.R
-import com.tapshare.app.TapShareApp
-import com.tapshare.app.model.TransferProgress
-import com.tapshare.app.model.TransferState
+import com.scimsoft.tap2share.R
+import com.scimsoft.tap2share.TapShareApp
+import com.scimsoft.tap2share.model.TransferProgress
+import com.scimsoft.tap2share.model.TransferState
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

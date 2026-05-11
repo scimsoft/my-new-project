@@ -1,4 +1,4 @@
-package com.tapshare.app.ui.components
+package com.scimsoft.tap2share.ui.components
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.*
@@ -8,8 +8,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.tapshare.app.model.TransferProgress
-import com.tapshare.app.model.TransferState
+import com.scimsoft.tap2share.model.TransferProgress
+import com.scimsoft.tap2share.model.TransferState
 
 @Composable
 fun TransferProgressIndicator(

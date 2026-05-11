@@ -1,4 +1,4 @@
-package com.tapshare.app
+package com.scimsoft.tap2share
 
 import android.content.ComponentName
 import android.content.Context
@@ -23,10 +23,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import com.tapshare.app.model.TransferProgress
-import com.tapshare.app.transfer.FileTransferService
-import com.tapshare.app.ui.screens.*
-import com.tapshare.app.ui.theme.TapShareTheme
+import com.scimsoft.tap2share.model.TransferProgress
+import com.scimsoft.tap2share.transfer.FileTransferService
+import com.scimsoft.tap2share.ui.screens.*
+import com.scimsoft.tap2share.ui.theme.TapShareTheme
 
 class MainActivity : ComponentActivity() {
 

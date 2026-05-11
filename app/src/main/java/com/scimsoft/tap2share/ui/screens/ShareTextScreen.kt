@@ -1,4 +1,4 @@
-package com.tapshare.app.ui.screens
+package com.scimsoft.tap2share.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape

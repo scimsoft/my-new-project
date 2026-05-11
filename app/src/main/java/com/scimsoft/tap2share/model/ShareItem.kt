@@ -1,4 +1,4 @@
-package com.tapshare.app.model
+package com.scimsoft.tap2share.model
 
 import android.net.Uri
 

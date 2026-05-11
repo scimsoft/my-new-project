@@ -1,4 +1,4 @@
-package com.tapshare.app.ui.screens
+package com.scimsoft.tap2share.ui.screens
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -22,8 +22,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.tapshare.app.model.ShareType
-import com.tapshare.app.ui.components.PulseAnimation
+import com.scimsoft.tap2share.model.ShareType
+import com.scimsoft.tap2share.ui.components.PulseAnimation
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

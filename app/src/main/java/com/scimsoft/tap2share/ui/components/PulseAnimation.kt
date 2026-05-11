@@ -1,4 +1,4 @@
-package com.tapshare.app.ui.components
+package com.scimsoft.tap2share.ui.components
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas

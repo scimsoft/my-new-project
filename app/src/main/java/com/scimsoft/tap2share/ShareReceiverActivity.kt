@@ -1,4 +1,4 @@
-package com.tapshare.app
+package com.scimsoft.tap2share
 
 import android.content.Intent
 import android.net.Uri
@@ -56,8 +56,8 @@ class ShareReceiverActivity : ComponentActivity() {
     }
 
     companion object {
-        const val ACTION_SHARE_CONTENT = "com.tapshare.ACTION_SHARE_CONTENT"
-        const val ACTION_SHARE_MULTIPLE = "com.tapshare.ACTION_SHARE_MULTIPLE"
+        const val ACTION_SHARE_CONTENT = "com.scimsoft.tap2share.ACTION_SHARE_CONTENT"
+        const val ACTION_SHARE_MULTIPLE = "com.scimsoft.tap2share.ACTION_SHARE_MULTIPLE"
         const val EXTRA_SHARE_TEXT = "share_text"
         const val EXTRA_SHARE_URI = "share_uri"
         const val EXTRA_SHARE_URIS = "share_uris"

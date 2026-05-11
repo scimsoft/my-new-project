@@ -58,7 +58,7 @@
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="application/com.tapshare" />
+                <data android:mimeType="application/com.scimsoft.tap2share" />
             </intent-filter>
 
             <!-- Fallback: catches NFC tags with NDEF tech even if MIME doesn't match -->

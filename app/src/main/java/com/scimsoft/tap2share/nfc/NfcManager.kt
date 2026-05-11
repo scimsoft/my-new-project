@@ -1,4 +1,4 @@
-package com.tapshare.app.nfc
+package com.scimsoft.tap2share.nfc
 
 import android.app.Activity
 import android.content.Intent
@@ -9,7 +9,7 @@ import android.nfc.Tag
 import android.nfc.tech.Ndef
 import android.os.Build
 import android.util.Log
-import com.tapshare.app.model.TransferInfo
+import com.scimsoft.tap2share.model.TransferInfo
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -69,14 +69,14 @@ class NfcManager {
         }
 
         val mimeRecord = NdefRecord.createMime(
-            "application/com.tapshare",
+            "application/com.scimsoft.tap2share",
             json.toString().toByteArray(Charset.forName("UTF-8"))
         )
 
         // Android Application Record ensures the receiver's phone auto-launches
         // TapShare when it detects this NFC message. If TapShare isn't installed,
         // Android opens the Play Store to the app's page.
-        val aarRecord = NdefRecord.createApplicationRecord("com.tapshare.app")
+        val aarRecord = NdefRecord.createApplicationRecord("com.scimsoft.tap2share")
 
         return NdefMessage(arrayOf(mimeRecord, aarRecord))
     }
@@ -127,8 +127,8 @@ class NfcManager {
         rawMessages?.forEach { raw ->
             val message = raw as NdefMessage
             message.records.forEach { record ->
-                if (String(record.type) == "application/com.tapshare" ||
-                    record.toMimeType() == "application/com.tapshare"
+                if (String(record.type) == "application/com.scimsoft.tap2share" ||
+                    record.toMimeType() == "application/com.scimsoft.tap2share"
                 ) {
                     return parseTransferInfo(record.payload)
                 }

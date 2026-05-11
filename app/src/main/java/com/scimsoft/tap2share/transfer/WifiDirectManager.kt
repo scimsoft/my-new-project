@@ -1,4 +1,4 @@
-package com.tapshare.app.transfer
+package com.scimsoft.tap2share.transfer
 
 import android.annotation.SuppressLint
 import android.content.BroadcastReceiver

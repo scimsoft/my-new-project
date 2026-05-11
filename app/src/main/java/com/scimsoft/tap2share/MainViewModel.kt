@@ -1,14 +1,14 @@
-package com.tapshare.app
+package com.scimsoft.tap2share
 
 import android.app.Application
 import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.tapshare.app.model.*
-import com.tapshare.app.nfc.NfcManager
-import com.tapshare.app.transfer.FileTransferService
-import com.tapshare.app.transfer.WifiDirectManager
-import com.tapshare.app.util.ContentUtils
+import com.scimsoft.tap2share.model.*
+import com.scimsoft.tap2share.nfc.NfcManager
+import com.scimsoft.tap2share.transfer.FileTransferService
+import com.scimsoft.tap2share.transfer.WifiDirectManager
+import com.scimsoft.tap2share.util.ContentUtils
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

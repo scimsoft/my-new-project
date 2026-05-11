@@ -1,8 +1,8 @@
-package com.tapshare.app
+package com.scimsoft.tap2share
 
-import com.tapshare.app.model.ShareItem
-import com.tapshare.app.model.ShareType
-import com.tapshare.app.util.ContentUtils
+import com.scimsoft.tap2share.model.ShareItem
+import com.scimsoft.tap2share.model.ShareType
+import com.scimsoft.tap2share.util.ContentUtils
 import org.junit.Assert.*
 import org.junit.Test
 

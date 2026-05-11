@@ -1,4 +1,4 @@
-package com.tapshare.app.ui.theme
+package com.scimsoft.tap2share.ui.theme
 
 import android.app.Activity
 import android.os.Build

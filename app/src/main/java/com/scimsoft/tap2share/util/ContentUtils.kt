@@ -1,4 +1,4 @@
-package com.tapshare.app.util
+package com.scimsoft.tap2share.util
 
 import android.content.ContentResolver
 import android.content.Context
@@ -6,8 +6,8 @@ import android.database.Cursor
 import android.net.Uri
 import android.provider.OpenableColumns
 import android.webkit.MimeTypeMap
-import com.tapshare.app.model.ShareItem
-import com.tapshare.app.model.ShareType
+import com.scimsoft.tap2share.model.ShareItem
+import com.scimsoft.tap2share.model.ShareType
 
 object ContentUtils {
 

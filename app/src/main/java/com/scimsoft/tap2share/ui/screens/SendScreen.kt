@@ -1,4 +1,4 @@
-package com.tapshare.app.ui.screens
+package com.scimsoft.tap2share.ui.screens
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -16,10 +16,10 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.tapshare.app.model.TransferProgress
-import com.tapshare.app.model.TransferState
-import com.tapshare.app.ui.components.PulseAnimation
-import com.tapshare.app.ui.components.TransferProgressIndicator
+import com.scimsoft.tap2share.model.TransferProgress
+import com.scimsoft.tap2share.model.TransferState
+import com.scimsoft.tap2share.ui.components.PulseAnimation
+import com.scimsoft.tap2share.ui.components.TransferProgressIndicator
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
