@@ -14,12 +14,12 @@ val keystoreProperties = Properties().apply {
 
 android {
     namespace = "com.scimsoft.tap2share"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.scimsoft.tap2share"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0.0"
 
