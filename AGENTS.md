@@ -2,18 +2,29 @@
 
 ## Cursor Cloud specific instructions
 
-This is a minimal Node.js scaffold project with zero external dependencies.
+This is a **TapShare** Android application — an NFC-based sharing app built with Kotlin and Jetpack Compose.
 
-### Running the application
+### Prerequisites
 
+- **Java 17+** (JDK 21 is available in the Cloud VM)
+- **Android SDK** installed at `~/android-sdk` with `platforms;android-34` and `build-tools;34.0.0`
+- `ANDROID_HOME` must be set: `export ANDROID_HOME=~/android-sdk`
+
+### Build & run
+
+```bash
+export ANDROID_HOME=~/android-sdk
+./gradlew assembleDebug          # Build debug APK
+./gradlew test                   # Run all unit tests
+./gradlew lintDebug              # Run Android lint checks
 ```
-node index.js
-```
+
+The debug APK is output at `app/build/outputs/apk/debug/app-debug.apk`.
 
 ### Key notes
 
-- The project manifest is `project_config.json` (not `package.json`). There is no `package.json`, so `npm install` / `npm start` will not work without first renaming or creating one.
-- There are no external dependencies — no `node_modules` needed.
-- There is no test framework configured; `npm test` (if a `package.json` were present) would just echo an error placeholder.
-- There is no lint configuration. No ESLint, Prettier, or similar tools are set up.
-- There is no build step. The application is a single `index.js` that runs directly with Node.js.
+- This is a pure Android project — it cannot be "run" in the traditional sense on a headless VM. Build verification is done via `./gradlew assembleDebug`.
+- NFC and WiFi Direct features require physical Android hardware; they cannot be tested in an emulator or CI.
+- The project uses **Jetpack Compose** for UI, not XML layouts.
+- Share intent receiver (`ShareReceiverActivity`) handles `ACTION_SEND` and `ACTION_SEND_MULTIPLE` from any app.
+- The original `index.js` / `project_config.json` files are the repo's original scaffold and are unrelated to the Android app.

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tap_blue">#FF2196F3</color>
+    <color name="tap_teal">#FF00BCD4</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+</resources>

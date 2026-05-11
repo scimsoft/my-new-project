@@ -60,4 +60,10 @@ venv/
 pip-log.txt
 pip-delete-this-directory.txt
 .tox
-.coverage
+.coverage# Built artifacts
+/app/build/
+.gradle/
+local.properties
+
+# Gradle wrapper JAR (binary)
+# gradle/wrapper/gradle-wrapper.jar
