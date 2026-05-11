@@ -68,12 +68,17 @@ class NfcManager {
             put("port", transferInfo.port)
         }
 
-        val record = NdefRecord.createMime(
+        val mimeRecord = NdefRecord.createMime(
             "application/com.tapshare",
             json.toString().toByteArray(Charset.forName("UTF-8"))
         )
 
-        return NdefMessage(arrayOf(record))
+        // Android Application Record ensures the receiver's phone auto-launches
+        // TapShare when it detects this NFC message. If TapShare isn't installed,
+        // Android opens the Play Store to the app's page.
+        val aarRecord = NdefRecord.createApplicationRecord("com.tapshare.app")
+
+        return NdefMessage(arrayOf(mimeRecord, aarRecord))
     }
 
     fun setupNdefPush(activity: Activity, transferInfo: TransferInfo) {

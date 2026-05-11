@@ -54,11 +54,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <!-- NFC discovery -->
+            <!-- NFC auto-launch: highest priority NDEF match on our MIME type -->
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="application/com.tapshare" />
+            </intent-filter>
+
+            <!-- Fallback: catches NFC tags with NDEF tech even if MIME doesn't match -->
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
             <meta-data

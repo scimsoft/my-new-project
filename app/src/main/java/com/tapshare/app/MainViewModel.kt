@@ -100,10 +100,37 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun handleNfcIntent(transferInfo: TransferInfo) {
         when (_currentScreen.value) {
-            Screen.RECEIVING -> {
+            Screen.SENDING -> {
+                // Sender tapped: initiate the transfer to the receiver
                 _transferProgress.value = TransferProgress(state = TransferState.CONNECTING)
+                val item = _shareItem.value ?: return
+                when (item.type) {
+                    ShareType.TEXT, ShareType.URL -> {
+                        transferService?.sendText(
+                            transferInfo.ipAddress,
+                            transferInfo.port,
+                            item.text ?: ""
+                        )
+                    }
+                    else -> {
+                        item.uri?.let { uri ->
+                            transferService?.sendFile(
+                                transferInfo.ipAddress,
+                                transferInfo.port,
+                                uri,
+                                item.fileName ?: "file",
+                                item.mimeType
+                            )
+                        }
+                    }
+                }
             }
-            else -> {}
+            else -> {
+                // Auto-launch into receive mode from any other screen
+                _currentScreen.value = Screen.RECEIVING
+                _transferProgress.value = TransferProgress(state = TransferState.CONNECTING)
+                transferService?.startServer(FileTransferService.DEFAULT_PORT) { _ -> }
+            }
         }
     }
 

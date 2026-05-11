@@ -5,9 +5,14 @@ import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.nfc.NfcAdapter
+import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
+import android.os.VibrationEffect
+import android.os.Vibrator
+import android.os.VibratorManager
 import android.provider.Settings
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
@@ -107,9 +112,32 @@ class MainActivity : ComponentActivity() {
             NfcAdapter.ACTION_NDEF_DISCOVERED,
             NfcAdapter.ACTION_TECH_DISCOVERED,
             NfcAdapter.ACTION_TAG_DISCOVERED -> {
+                vibrateOnTap()
                 val transferInfo = viewModel.nfcManager.handleIntent(intent)
-                transferInfo?.let { viewModel.handleNfcIntent(it) }
+                if (transferInfo != null) {
+                    Toast.makeText(
+                        this,
+                        "TapShare: incoming from ${transferInfo.senderName}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    viewModel.handleNfcIntent(transferInfo)
+                }
             }
+        }
+    }
+
+    @Suppress("DEPRECATION")
+    private fun vibrateOnTap() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val manager = getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as? VibratorManager
+            manager?.defaultVibrator?.vibrate(
+                VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE)
+            )
+        } else {
+            val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
+            vibrator?.vibrate(
+                VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE)
+            )
         }
     }
 
