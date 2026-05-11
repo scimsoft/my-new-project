@@ -77,7 +77,12 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    TapShareNavigation(viewModel)
+                    TapShareNavigation(
+                        viewModel = viewModel,
+                        onPickFile = { filePickerLauncher.launch("*/*") },
+                        onPickImage = { imagePickerLauncher.launch("image/*") },
+                        onOpenNfcSettings = { startActivity(Intent(Settings.ACTION_NFC_SETTINGS)) }
+                    )
                 }
             }
         }
@@ -155,7 +160,12 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun TapShareNavigation(viewModel: MainViewModel) {
+fun TapShareNavigation(
+    viewModel: MainViewModel,
+    onPickFile: () -> Unit,
+    onPickImage: () -> Unit,
+    onOpenNfcSettings: () -> Unit
+) {
     val currentScreen by viewModel.currentScreen.collectAsState()
     val nfcAvailable by viewModel.nfcManager.nfcAvailable.collectAsState()
     val nfcEnabled by viewModel.nfcManager.nfcEnabled.collectAsState()
@@ -176,10 +186,10 @@ fun TapShareNavigation(viewModel: MainViewModel) {
                     nfcAvailable = nfcAvailable,
                     nfcEnabled = nfcEnabled,
                     onShareText = { viewModel.navigateTo(Screen.SHARE_TEXT) },
-                    onShareFile = { viewModel.navigateTo(Screen.HOME) },
-                    onShareImage = { viewModel.navigateTo(Screen.HOME) },
+                    onShareFile = onPickFile,
+                    onShareImage = onPickImage,
                     onReceive = { viewModel.startReceiving() },
-                    onOpenNfcSettings = { }
+                    onOpenNfcSettings = onOpenNfcSettings
                 )
             }
 
